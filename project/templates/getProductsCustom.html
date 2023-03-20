@@ -1,0 +1,18 @@
+{%extends "base2.html"%}
+
+{%block content%}
+    <div class="container-fluid">
+        <div class="row my-3 text-white rounded-pill" style="background-color: rgba(0, 0, 0, 0.3);">
+            <div class="col-12 mt-4 mb-3 text-center">
+                <h3>Catalogo de productos</h3>
+            </div>
+        </div>
+        
+        <div class="row my-3 text-white rounded px-4 pt-4" style="background-color: rgba(0, 0, 0, 0.3);">
+            {% from "_macros.html" import render_card %}
+            {%for p in product%}
+                {{render_card(p.name, p.img)}}
+            {%endfor%}
+        </div>
+    </div>
+{%endblock%}

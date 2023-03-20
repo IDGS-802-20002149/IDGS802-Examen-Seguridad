@@ -1,0 +1,44 @@
+{%extends "base.html"%}
+
+{%block content%}
+    <div class="container-fluid">
+        <div class="row my-3 text-white rounded-pill" style="background-color: rgba(0, 0, 0, 0.3);">
+            <div class="col-10 mt-4 mb-3 text-center">
+                <h3>Actualizar Producto</h3>
+            </div>
+            <div class="col-2 mt-4">
+                <a href="/getProducts" class="btn btn-danger rounded-pill"><i class="bi bi-arrow-left-circle"></i> Cancelar</a>
+            </div>
+        </div>
+
+        <div class="row my-3 text-white rounded px-4 pt-4 position-relative"></div>
+            <center>
+                <div class="col-5 p-3 mt-3" style="background-color: rgba(0, 0, 0, 0.3);">
+                    <div class="card">
+                        <div class="card-body">
+                            <form action="/updateProduct" class="form" method="post" novalidate>
+                                {% from "_macros.html" import render_field %}
+                                
+                                <div class="form-control my-3">
+                                    {{render_field(form.name)}}
+                                </div>
+                                <div class="form-control my-3">
+                                    {{render_field(form.descr)}}
+                                </div>
+                                <div class="form-control my-3">
+                                    {{render_field(form.img)}}
+                                </div>
+                                <div class="form-control my-3">
+                                    {{render_field(form.amount)}}
+                                </div>
+                                <center>
+                                    <button class="btn btn-warning" type="submit"><i class="bi bi-pencil-square"></i> Actualizar</button>
+                                </center>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </center>
+        </div>
+    </div>
+{%endblock%}

@@ -1,0 +1,51 @@
+{% extends "base2.html" %}
+
+{% block content %}
+<div class="row mt-3">
+  <div class="col-12">
+    <div class="alert alert-success" role="alert">
+      <h4 class="title">Bienvenido (a), {{ name }}!</h4>
+    </div>
+  </div>
+</div>
+<div class="row text-center">
+  <div class="col-6 offset-md-3">
+    <img src="../static/img/logo-amazon.png" width="100px">
+    <h5>Contacto</h5>
+      <div class="card">
+        <div class="card-body">
+            <p>Somos empresa una multinacional tecnol&oacute;gica estadounidense especializada en comercio electr&oacute;nico,
+            computaci&oacute;n en la nube, streaming digital e inteligencia artificial. Fundada en 1994 por Jeff Bezos, Amazon es
+            uno de los mayores minoristas en l&iacute;nea del mundo, y ofrece una gama de productos que van desde libros y
+            m&uacute;sica hasta muebles y ropa.
+            </p>
+          <form method="POST" action="/security/update">
+            <div class="field">
+                <div class="form-group">
+                    <label for="name">Correo: </label>
+                    <input class="form-control" type="email" name="email" placeholder="Ingresa tu nuevo correo electr&oacute;nico" autofocus="">
+                </div>
+            </div>
+
+            <div class="field">
+                <div class="form-group mt-3">
+                    <label for="name">Nombre: </label>
+                    <input class="form-control" type="text" name="name" placeholder="Ingresa tu nuevo nombre completo" autofocus="">
+                </div>
+            </div>
+
+            <div class="field">
+                <div class="form-group mt-3">
+                    <label for="name">Dejar un comentario: </label>
+                    <input class="form-control" type="text" name="comentario" placeholder="Dejanos una comentario">
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block mt-3">Enviar</button>
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

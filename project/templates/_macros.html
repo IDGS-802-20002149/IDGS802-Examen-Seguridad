@@ -1,0 +1,50 @@
+{% macro card_name(name, img, id) %}
+
+<div class="col-3">
+    <div class="card text-center mb-4">
+        <div class="card-body">
+            <img src="data:image/png;base64,{{img}}" height="100" width="100">
+            <h4 class="text-dark">{{name}}</h4>
+            <a href="{{url_for('productos.deleteProduct') }}?id={{id}}" class="btn btn-danger"><i class="icon-trash icon-white"></i> Eliminar</a>
+            <a href="{{ url_for('productos.updateProduct') }}?id={{id}}" class="btn btn-warning"><i class="icon-pencil icon-white"></i> Modificar</a>
+        </div>
+    </div>
+</div>
+
+{%endmacro%}
+
+{% macro render_card(name, img) %}
+
+<div class="col-3">
+    <div class="card text-center mb-4">
+        <div class="card-body">
+            <img src="data:image/png;base64,{{img}}" height="100" width="100">
+            <h4 class="text-dark">{{name}}</h4>
+            <a class="btn btn-outline-info"> Detalles</a>
+        </div>
+    </div>
+</div>
+
+{%endmacro%}
+
+{% macro render_field(field) %}
+
+<div class="control-group">
+    <div class="controls">
+        {{field.label}}
+        {{field(**kwargs)|safe}}
+    </div>
+</div>
+{%if field.error%}
+
+<ul>
+    {%for error in field.errors%}
+    <li style="color: red;">
+        {{error}}
+    </li>
+    {%endfor%}
+</ul>
+
+{%endif%}
+
+{%endmacro%}

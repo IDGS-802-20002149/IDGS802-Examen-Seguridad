@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="row text-center">
+        <div class="col-md-4 offset-md-4">
+            <img src="../static/img/logo-amazon.png" width="150px">
+            <div class="card">
+                <div class="card-body">
+                    {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                            <div class="alert alert-danger" role="alert">
+                                {{ messages[0] }}
+                            </div>
+                        {% endif %}
+                    {% endwith %}
+                    <form method="POST" action="/security/login">
+                        <div class="field">
+                            <div class="form-group">
+                                <label for="name">Correo: </label>
+                                <input class="form-control" type="email" name="email" placeholder="Ingresa tu correo electr&oacute;nico" autofocus="">
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <div class="form-group mt-3">
+                                <label for="name">Contrase&ntilde;a: </label>
+                                <input class="form-control" type="password" name="password" placeholder="Ingresa tu contrase&ntilde;a">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="form-check form-check-inline mt-3">
+                                <input class="form-check-input" type="checkbox" id="checkbox">
+                                <label class="form-check-label" for="checkbox">Recuerdame</label>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block mt-3">Iniciar Sesi&oacute;n</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

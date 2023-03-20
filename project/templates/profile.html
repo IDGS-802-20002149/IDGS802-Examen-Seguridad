@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row mt-3">
+  <div class="col-12">
+    <div class="alert alert-success" role="alert">
+      <h4 class="title">Bienvenido, {{ name }}!</h4>
+    </div>
+  </div>
+</div>
+<div class="row text-center">
+  <div class="col-md-4 offset-md-4">
+    <img src="../static/img/logo-amazon.png" width="100px">
+    <h5>Actualizar datos</h5>
+      <div class="card">
+        <div class="card-body">
+          <form method="POST" action="/security/update">
+            <div class="field">
+                <div class="form-group">
+                    <label for="name">Correo: </label>
+                    <input class="form-control" type="email" name="email" placeholder="Ingresa tu nuevo correo electr&oacute;nico" autofocus="">
+                </div>
+            </div>
+
+            <div class="field">
+                <div class="form-group mt-3">
+                    <label for="name">Nombre: </label>
+                    <input class="form-control" type="text" name="name" placeholder="Ingresa tu nuevo nombre completo" autofocus="">
+                </div>
+            </div>
+
+            <div class="field">
+                <div class="form-group mt-3">
+                    <label for="name">Contrase&ntilde;a: </label>
+                    <input class="form-control" type="password" name="password" placeholder="Ingresa nueva tu contrase&ntilde;a">
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block mt-3">Actualizar</button>
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
